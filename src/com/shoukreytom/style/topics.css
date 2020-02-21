@@ -1,0 +1,9 @@
+.pane {
+    -fx-background-color: black;
+    -fx-pref-height: 80px;
+    -fx-width: 100%;
+}
+.label {
+    -fx-background: black;
+    -fx-text-fill: white;
+}
