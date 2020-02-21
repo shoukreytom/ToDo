@@ -1,0 +1,45 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<BorderPane fx:controller="com.shoukreytom.Controller" styleClass="base" stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <VBox alignment="CENTER" prefHeight="80" styleClass="pane">
+            <Label text="Schedule your time" alignment="CENTER"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Topics" contentDisplay="TOP" onAction="#reports">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="TH_LIST" size="40" fill="aqua"/>
+                    </graphic>
+                </Button>
+                <Button text="Projects" contentDisplay="TOP" onAction="#reports">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="TH" size="40" fill="cornflowerblue"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Reports" contentDisplay="TOP" onAction="#reports">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="SHARE" size="40" fill="greenyellow"/>
+                    </graphic>
+                </Button>
+                <Button text="Exit" contentDisplay="TOP" onAction="#reports">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="POWER_OFF" size="40" fill="red"/>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
