@@ -1,6 +1,5 @@
 package com.shoukreytom.control;
 
-import com.shoukreytom.model.DatesValidation;
 import com.shoukreytom.model.TopicsModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,17 +9,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.time.LocalDate;
 
 public class Topics {
 
     @FXML
+    private BorderPane mainPane;
+    @FXML
     private ListView<TopicsModel> topics;
     private ObservableList<TopicsModel> dataList;
-    private Stage addStage = new Stage();
 
     @FXML
     public void initialize() {
@@ -35,9 +36,12 @@ public class Topics {
 
     @FXML
     public void add() throws Exception{
+        Stage addStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/addTopic.fxml"));
         addStage.setScene(new Scene(root));
         addStage.setTitle("Add");
+        addStage.initModality(Modality.WINDOW_MODAL);
+        addStage.initOwner(mainPane.getScene().getWindow());
         addStage.show();
     }
 
