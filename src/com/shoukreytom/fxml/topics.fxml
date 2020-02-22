@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
+
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.shoukreytom.control.Topics" fx:id="mainPane" id="base"
             prefHeight="500.0" prefWidth="600.0" stylesheets="@../style/topics.css">

@@ -1,5 +1,6 @@
 package com.shoukreytom.control;
 
+import com.shoukreytom.Main;
 import com.shoukreytom.model.TopicsModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -59,9 +60,7 @@ public class Topics {
     @FXML
     public void home() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/home.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
+        Main.mainWindow.setScene(new Scene(root));
     }
 
 }
