@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -17,24 +18,9 @@ import java.time.LocalDate;
 public class Topics {
 
     @FXML
-    private BorderPane mainPane;
-    @FXML
     private ListView<TopicsModel> topics;
     private ObservableList<TopicsModel> dataList;
     private Stage addStage = new Stage();
-
-    //////////// For addTopic.fxml ////////////////
-    @FXML
-    private DatePicker from;
-    @FXML
-    private DatePicker to;
-    @FXML
-    private TextField topic;
-    @FXML
-    private TextArea description;
-    @FXML
-    private Label errorMSG;
-    ///////////////////////////////////////////////////
 
     @FXML
     public void initialize() {
@@ -72,35 +58,6 @@ public class Topics {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-    }
-
-    ////////////////// Control For addTopic.fxml /////////////////////
-
-    @FXML
-    public void addTopic() {
-        ///// adds topic to the db
-        LocalDate fromDate = this.from.getValue();
-        LocalDate toDate = this.to.getValue();
-        String topic = this.topic.getText();
-        String description = this.description.getText();
-
-        boolean isTopicEmpty = topic.isEmpty() || topic.trim().isEmpty();
-
-        if (DatesValidation.validate(fromDate, toDate) && ! isTopicEmpty) {
-            System.out.println("valid");
-        }else {
-            errorMSG.setText("Not valid");
-        }
-    }
-    @FXML
-    public void cancel() {
-        //// cancel the action
-        if (addStage != null) {
-            addStage.close();
-            System.out.println("Can be cancelled");
-        }else {
-            System.out.println(addStage);
-        }
     }
 
 }
