@@ -4,14 +4,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.shoukreytom.control.Topics" fx:id="mainPane"
-            prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/topics.css">
+            fx:controller="com.shoukreytom.control.Topics" fx:id="mainPane" id="base"
+            prefHeight="500.0" prefWidth="600.0" stylesheets="@../style/topics.css">
     <top>
-        <VBox alignment="CENTER" prefHeight="80" styleClass="pane">
-            <Label text="Schedule your time" alignment="CENTER"/>
-        </VBox>
-        <Separator />
         <ToolBar>
             <HBox spacing="10">
                 <Button onAction="#add">
@@ -39,12 +36,10 @@
     </top>
 
     <left>
-        <ListView>
-
-        </ListView>
+        <ListView fx:id="topics" />
     </left>
     <center>
-        <VBox>
+        <VBox layoutY="10">
             <TextArea VBox.vgrow="ALWAYS"/>
             <Label text="Due: "/>
         </VBox>

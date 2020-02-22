@@ -1,9 +1,25 @@
+#base {
+    -fx-background-color: #334444;
+}
 .pane {
-    -fx-background-color: black;
-    -fx-pref-height: 80px;
+    -fx-background-color: #333333;
+    //-fx-pref-height: 80px;
     -fx-width: 100%;
 }
 .label {
-    -fx-background: black;
     -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.tool-bar {
+    -fx-background-color: #334444;
+}
+.button {
+    -fx-background-color: #334444;
+}
+.button:hover {
+    -fx-background-color: black;
+}
+.text-area {
+    -fx-background-color: #334444;
 }

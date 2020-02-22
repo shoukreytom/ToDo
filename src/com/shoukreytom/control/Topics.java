@@ -1,13 +1,14 @@
 package com.shoukreytom.control;
 
+import com.shoukreytom.model.DatesValidation;
+import com.shoukreytom.model.TopicsModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -17,7 +18,10 @@ public class Topics {
 
     @FXML
     private BorderPane mainPane;
-    private Stage addStage;
+    @FXML
+    private ListView<TopicsModel> topics;
+    private ObservableList<TopicsModel> dataList;
+    private Stage addStage = new Stage();
 
     //////////// For addTopic.fxml ////////////////
     @FXML
@@ -33,8 +37,18 @@ public class Topics {
     ///////////////////////////////////////////////////
 
     @FXML
+    public void initialize() {
+        loadData();
+    }
+
+    private void loadData() {
+        dataList = FXCollections.observableArrayList();
+        dataList.addAll(new TopicsModel(LocalDate.now(), LocalDate.now(), "some", "this"));
+        topics.getItems().addAll(dataList);
+    }
+
+    @FXML
     public void add() throws Exception{
-        addStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/addTopic.fxml"));
         addStage.setScene(new Scene(root));
         addStage.setTitle("Add");
@@ -70,29 +84,22 @@ public class Topics {
         String topic = this.topic.getText();
         String description = this.description.getText();
 
-        // these lines are made just for reducing the length of if statement
-        boolean nullCheck = fromDate != null && toDate != null;
-        boolean yearEquality = nullCheck && fromDate.getYear() == toDate.getYear();
-        boolean monthEquality = nullCheck && fromDate.getMonthValue() == toDate.getMonthValue();
-        boolean yearValid = nullCheck && (fromDate.getYear() < toDate.getYear());
-        boolean monthValid = nullCheck && (fromDate.getMonthValue() < toDate.getMonthValue());
-        boolean dayValid = nullCheck && (fromDate.getDayOfMonth() < toDate.getDayOfMonth());
+        boolean isTopicEmpty = topic.isEmpty() || topic.trim().isEmpty();
 
-        if (yearValid) {
-            System.out.println("valid");
-        } else if (yearEquality && monthValid) {
-            System.out.println("valid");
-        } else if (yearEquality && monthEquality && dayValid) {
+        if (DatesValidation.validate(fromDate, toDate) && ! isTopicEmpty) {
             System.out.println("valid");
         }else {
-            System.out.println("not valid");
+            errorMSG.setText("Not valid");
         }
     }
     @FXML
     public void cancel() {
         //// cancel the action
         if (addStage != null) {
+            addStage.close();
             System.out.println("Can be cancelled");
+        }else {
+            System.out.println(addStage);
         }
     }
 
