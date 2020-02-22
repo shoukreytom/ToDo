@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shoukreytom.control.Topics"
+            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="10">
+    <HBox spacing="5">
+        <Label text="from: "/>
+        <DatePicker fx:id="from"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="to: "/>
+        <DatePicker fx:id="to"/>
+    </HBox>
+    <HBox>
+        <Label text="topic: "/>
+        <TextField fx:id="topic"/>
+    </HBox>
+    <VBox spacing="5">
+        <Label text="description: "/>
+        <TextArea fx:id="description"/>
+    </VBox>
+    <HBox spacing="30">
+        <Button text="Add" onAction="#addTopic"/>
+        <Button text="Cancel" onAction="#cancel"/>
+    </HBox>
+    <Label fx:id="errorMSG"/>
+</VBox>
+</AnchorPane>

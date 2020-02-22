@@ -1,4 +1,4 @@
-package com.shoukreytom;
+package com.shoukreytom.control;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.shoukreytom.Topics"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="com.shoukreytom.control.Topics" fx:id="mainPane"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/topics.css">
     <top>
         <VBox alignment="CENTER" prefHeight="80" styleClass="pane">
             <Label text="Schedule your time" alignment="CENTER"/>
         </VBox>
         <Separator />
         <ToolBar>
-            <Button text="Add"/>
+            <HBox spacing="10">
+                <Button onAction="#add">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="PLUS" size="30" fill="green"/>
+                    </graphic>
+                </Button>
+                <Button onAction="#del">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="MINUS" fill="red" size="30"/>
+                    </graphic>
+                </Button>
+                <Button onAction="#edit">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="EDIT" fill="darkblue" size="30"/>
+                    </graphic>
+                </Button>
+                <Button onAction="#home">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="HOME" fill="deepskyblue" size="30"/>
+                    </graphic>
+                </Button>
+            </HBox>
         </ToolBar>
     </top>
+
+    <left>
+        <ListView>
+
+        </ListView>
+    </left>
+    <center>
+        <VBox>
+            <TextArea VBox.vgrow="ALWAYS"/>
+            <Label text="Due: "/>
+        </VBox>
+    </center>
 
 </BorderPane>

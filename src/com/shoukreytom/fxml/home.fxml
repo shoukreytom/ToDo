@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<BorderPane fx:controller="com.shoukreytom.Controller" styleClass="base" stylesheets="@../style/style.css"
+<BorderPane fx:controller="com.shoukreytom.control.Controller" styleClass="base" stylesheets="@../style/style.css"
             xmlns:fx="http://javafx.com/fxml">
     <top>
         <VBox alignment="CENTER" prefHeight="80" styleClass="pane">
