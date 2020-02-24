@@ -1,45 +1,57 @@
 package com.shoukreytom.model;
 
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
-import java.time.LocalDate;
 
 public class TopicsModel {
 
-    private SimpleObjectProperty<LocalDate> from;
-    private SimpleObjectProperty<LocalDate> to;
+    private SimpleIntegerProperty id;
+    private SimpleStringProperty from;
+    private SimpleStringProperty to;
     private SimpleStringProperty topic;
     private SimpleStringProperty description;
 
-    public TopicsModel(LocalDate from, LocalDate to, String topic, String description) {
-        this.from = new SimpleObjectProperty<>(from);
-        this.to = new SimpleObjectProperty<>(to);
+    public TopicsModel(int id, String from, String to, String topic, String description) {
+        this.id = new SimpleIntegerProperty(id);
+        this.from = new SimpleStringProperty(from);
+        this.to = new SimpleStringProperty(to);
         this.topic = new SimpleStringProperty(topic);
         this.description = new SimpleStringProperty(description);
     }
 
-    public LocalDate getFrom() {
+    public int getId() {
+        return id.get();
+    }
+
+    public SimpleIntegerProperty idProperty() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public String getFrom() {
         return from.get();
     }
 
-    public SimpleObjectProperty<LocalDate> fromProperty() {
+    public SimpleStringProperty fromProperty() {
         return from;
     }
 
-    public void setFrom(LocalDate from) {
+    public void setFrom(String from) {
         this.from.set(from);
     }
 
-    public LocalDate getTo() {
+    public String getTo() {
         return to.get();
     }
 
-    public SimpleObjectProperty<LocalDate> toProperty() {
+    public SimpleStringProperty toProperty() {
         return to;
     }
 
-    public void setTo(LocalDate to) {
+    public void setTo(String to) {
         this.to.set(to);
     }
 
