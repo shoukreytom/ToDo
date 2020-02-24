@@ -18,11 +18,12 @@ public class LoadData {
             PreparedStatement ps = con.prepareStatement("SELECT * FROM topics");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String from = rs.getString("from");
                 String to = rs.getString("to");
                 String topic = rs.getString("topic");
                 String description = rs.getString("description");
-                topics.add(new TopicsModel(from, to, topic, description));
+                topics.add(new TopicsModel(id, from, to, topic, description));
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());
@@ -36,11 +37,12 @@ public class LoadData {
             PreparedStatement ps = con.prepareStatement("SELECT * FROM projects");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String from = rs.getString("from");
                 String to = rs.getString("to");
                 String project = rs.getString("topic");
                 String description = rs.getString("description");
-                projects.add(new ProjectsModel(from, to, project, description));
+                projects.add(new ProjectsModel(id, from, to, project, description));
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());
