@@ -36,12 +36,12 @@
     </top>
 
     <left>
-        <ListView fx:id="topics" />
+        <ListView fx:id="topics"/>
     </left>
     <center>
         <VBox layoutY="10">
-            <TextArea VBox.vgrow="ALWAYS"/>
-            <Label text="Due: "/>
+            <TextArea VBox.vgrow="ALWAYS" fx:id="descriptionScreen"/>
+            <Label text="Due: " fx:id="dateScreen"/>
         </VBox>
     </center>
 
