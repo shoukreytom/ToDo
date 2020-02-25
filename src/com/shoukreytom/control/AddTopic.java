@@ -32,6 +32,8 @@ public class AddTopic {
         ///// adds topic to the db
         LocalDate fromDate = this.from.getValue();
         LocalDate toDate = this.to.getValue();
+        String from = fromDate.getDayOfMonth()+"/"+fromDate.getMonthValue()+"/"+fromDate.getYear();
+        String to = toDate.getDayOfMonth()+"/"+toDate.getMonthValue()+"/"+toDate.getYear();
         String topic = this.topic.getText();
         String description = this.description.getText();
 

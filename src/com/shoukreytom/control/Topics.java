@@ -2,6 +2,7 @@ package com.shoukreytom.control;
 
 import com.shoukreytom.Main;
 import com.shoukreytom.model.DBConnection;
+import com.shoukreytom.model.LoadData;
 import com.shoukreytom.model.TopicsModel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Topics {
 
@@ -33,7 +35,8 @@ public class Topics {
     @FXML
     private TextArea descriptionScreen;
 
-    private ObservableList<TopicsModel> dataList;
+//    private ObservableList<TopicsModel> dataList;
+    private Controller controller = new Controller();
 
     @FXML
     public void initialize() {
@@ -41,16 +44,9 @@ public class Topics {
     }
 
     private void loadData() {
-//        try {
-//            Connection con = DBConnection.getConnection();
-//            PreparedStatement ps = con.prepareStatement("CREATE TABLE IF NOT EXISTS topics(int id)");
-//        }catch (SQLException e) {
-//            System.out.println(e.getErrorCode());
-//        }
-        dataList = FXCollections.observableArrayList();
-        dataList.addAll(new TopicsModel(LocalDate.now(), LocalDate.now(), "some", "this"),
-                new TopicsModel(LocalDate.now(), LocalDate.now(), "new", "some"),
-                new TopicsModel(LocalDate.now(), LocalDate.now(), "Thing", "view"));
+//        dataList = FXCollections.observableArrayList();
+        List<TopicsModel> topicsModels = LoadData.getTopics();
+
         topics.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TopicsModel>() {
             @Override
             public void changed(ObservableValue<? extends TopicsModel> observable, TopicsModel oldValue, TopicsModel newValue) {
@@ -62,7 +58,7 @@ public class Topics {
             }
         });
         topics.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        topics.getItems().addAll(dataList);
+        topics.getItems().setAll(topicsModels);
         topics.getSelectionModel().selectFirst();
     }
 

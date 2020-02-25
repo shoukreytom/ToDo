@@ -19,8 +19,8 @@ public class LoadData {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String from = rs.getString("from");
-                String to = rs.getString("to");
+                String from = rs.getString("start");
+                String to = rs.getString("end");
                 String topic = rs.getString("topic");
                 String description = rs.getString("description");
                 topics.add(new TopicsModel(id, from, to, topic, description));
@@ -38,9 +38,9 @@ public class LoadData {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String from = rs.getString("from");
-                String to = rs.getString("to");
-                String project = rs.getString("topic");
+                String from = rs.getString("start");
+                String to = rs.getString("end");
+                String project = rs.getString("project");
                 String description = rs.getString("description");
                 projects.add(new ProjectsModel(id, from, to, project, description));
             }
