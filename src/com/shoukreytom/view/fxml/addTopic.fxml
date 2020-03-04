@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="400.0"
-          prefWidth="600.0" fx:controller="com.shoukreytom.control.AddTopic" fx:id="pane"
+          prefWidth="600.0" fx:controller="com.shoukreytom.view.controller.AddTopic" fx:id="pane"
           alignment="CENTER">
     <VBox spacing="10" alignment="CENTER">
         <HBox spacing="5" alignment="CENTER">

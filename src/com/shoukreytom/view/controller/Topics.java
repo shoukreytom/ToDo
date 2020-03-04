@@ -1,13 +1,10 @@
-package com.shoukreytom.control;
+package com.shoukreytom.view.controller;
 
 import com.shoukreytom.Main;
-import com.shoukreytom.model.DBConnection;
 import com.shoukreytom.model.LoadData;
 import com.shoukreytom.model.TopicsModel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,12 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 public class Topics {
@@ -72,7 +64,7 @@ public class Topics {
     @FXML
     public void add() throws Exception{
         Stage addStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/addTopic.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/view/fxml/addTopic.fxml"));
         addStage.setScene(new Scene(root));
         addStage.setTitle("Add");
         addStage.initModality(Modality.WINDOW_MODAL);
@@ -93,7 +85,7 @@ public class Topics {
 
     @FXML
     public void home() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/view/fxml/home.fxml"));
         Main.mainWindow.setScene(new Scene(root));
     }
 

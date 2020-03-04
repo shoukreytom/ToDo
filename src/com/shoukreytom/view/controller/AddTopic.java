@@ -1,4 +1,4 @@
-package com.shoukreytom.control;
+package com.shoukreytom.view.controller;
 
 import com.shoukreytom.model.DatesValidation;
 import javafx.fxml.FXML;

@@ -1,7 +1,5 @@
 package com.shoukreytom.model;
 
-import com.shoukreytom.control.Topics;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

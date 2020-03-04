@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         mainWindow = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/fxml/home.fxml"));
         primaryStage.setTitle("Time Manager");
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();

@@ -1,4 +1,4 @@
-package com.shoukreytom.control;
+package com.shoukreytom.view.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,7 @@ public class Projects {
 
     @FXML
     public void home() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/fxml/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/shoukreytom/view/fxml/home.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();

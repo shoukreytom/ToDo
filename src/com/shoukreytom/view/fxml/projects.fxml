@@ -5,7 +5,7 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.shoukreytom.control.Projects"
+            fx:controller="com.shoukreytom.view.controller.Projects"
             prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/projects.css">
     <top>
         <VBox alignment="CENTER" prefHeight="80" styleClass="pane">

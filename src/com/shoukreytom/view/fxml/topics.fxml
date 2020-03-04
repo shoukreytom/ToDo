@@ -6,7 +6,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.shoukreytom.control.Topics" fx:id="mainPane" id="base"
+            fx:controller="com.shoukreytom.view.controller.Topics" fx:id="mainPane" id="base"
             prefHeight="500.0" prefWidth="600.0" stylesheets="@../style/topics.css">
     <top>
         <ToolBar>
