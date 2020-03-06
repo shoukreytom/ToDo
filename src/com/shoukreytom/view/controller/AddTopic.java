@@ -27,6 +27,8 @@ public class AddTopic {
     private Label errorMSG;
     ///////////////////////////////////////////////////
 
+    private AddTopicListener listener;
+
     @FXML
     public void addTopic() {
         ///// adds topic to the db
