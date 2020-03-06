@@ -42,7 +42,9 @@ public class AddTopic {
         boolean isTopicEmpty = topic.isEmpty() || topic.trim().isEmpty();
 
         if (DatesValidation.validate(fromDate, toDate) && ! isTopicEmpty) {
-            System.out.println("valid");
+            if (listener != null) {
+                listener.listen(from, to, topic, description);
+            }
         }else {
             errorMSG.setText("Not valid");
         }
